@@ -5,6 +5,7 @@ import { Component } from "@angular/core";
     templateUrl: 'users.component.html'
 })
 export class UsersComponent {
+    nbSelected: number = 0
     users: any[] = [
         {
           "id": 1,
