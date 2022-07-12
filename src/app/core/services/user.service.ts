@@ -26,4 +26,12 @@ export class UserService {
         })*/
         return lastValueFrom(this.http.get<User[]>(this.url))
     }
+
+    create(payload: { name: string, email: string }): Observable<User> {
+        return this.http.post<User>(this.url, payload)
+    }
+
+    delete(id: number): Observable<void> {
+        return this.http.delete<void>(this.url + '/' + id)
+    }
 }

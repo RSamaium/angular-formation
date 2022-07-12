@@ -20,4 +20,13 @@ export class UsersComponent implements OnInit {
       })*/
       this.users = await this.userService.getAll()
     }
+
+    createUser() {
+      this.userService.create({
+        name: 'ana',
+        email: 'ana@gmail.com'
+      }).subscribe((userCreated: User) => {
+        this.users.push(userCreated)
+      })
+    }
 }

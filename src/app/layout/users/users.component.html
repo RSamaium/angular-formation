@@ -11,6 +11,8 @@
     <option *ngFor="let ext of extensions">{{ ext }}</option>
 </select>
 
+<button (click)="createUser()">Créer Utilisateur</button>
+
 <app-user-card 
     *ngFor="let u of users | extFilter:extSelected" [user]="u">
 </app-user-card>
