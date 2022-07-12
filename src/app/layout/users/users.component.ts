@@ -29,4 +29,12 @@ export class UsersComponent implements OnInit {
         this.users.push(userCreated)
       })
     }
+
+    deleteUser(id: number) {
+      // const index = this.users.findIndex(user => user.id == id)
+      // this.users.splice(index, 1)
+      this.users = this.users.filter(user => user.id != id)
+      //this.users = [].concat(this.users)
+      //this.users = [...this.users]
+    }
 }

@@ -14,5 +14,8 @@
 <button (click)="createUser()">Créer Utilisateur</button>
 
 <app-user-card 
-    *ngFor="let u of users | extFilter:extSelected" [user]="u">
+    *ngFor="let u of users | extFilter:extSelected" 
+    [user]="u"
+    (onDelete)="deleteUser($event)"
+    >
 </app-user-card>
