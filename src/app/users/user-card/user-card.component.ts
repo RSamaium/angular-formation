@@ -6,6 +6,7 @@ import { User } from "src/app/core/interfaces/user";
     template: `
         <h3>{{ user.name }}</h3>
         <p>{{ user.email }}</p>
+        <button>{{ 'REMOVE' | lang:'en' }}</button>
     `
 })
 export class UserCardComponent {
