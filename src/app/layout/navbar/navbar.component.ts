@@ -6,6 +6,7 @@ import { Component } from "@angular/core";
         <h1>{{ title | uppercase }} - 
             {{ price | currency:'EUR':'code' }}</h1>
         <app-search [username]="name" (onSearch)="listenSearch($event)"></app-search>
+        <button routerLink="/login">Connexion</button>
     `
 })
 export class NavbarComponent {
