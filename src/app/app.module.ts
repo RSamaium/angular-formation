@@ -5,10 +5,18 @@ import { appRouter } from './app.router'
 import { LoginModule } from './login/login.module'
 import { LayoutModule } from './layout/layout.module'
 import { AppService } from './core/services/app.service'
+import { UserService } from './core/services/user.service'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, LayoutModule, LoginModule, appRouter],
+    imports: [
+        BrowserModule, 
+        LayoutModule, 
+        LoginModule, 
+        appRouter,
+        HttpClientModule
+    ],
     bootstrap: [AppComponent],
     providers: [AppService]
 })

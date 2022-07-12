@@ -1,21 +1,9 @@
-/api/me  --> { name: "", email: "" }
+[A,   B,   C,                            D]
 
-```ts
-class Me {
-    getName() {
-        return ...
-    }
-}
-```
+bufferTime(2000)
 
-Navbar
+[[A, B, C],                             [D]]
 
-```ts
-me.getName()
-```
+map(el => el.length)
 
-Profil
-
-```ts
-me.getName()
-```
+[3,                                      1]
