@@ -6,6 +6,8 @@ import { Component } from "@angular/core";
 })
 export class UsersComponent {
     nbSelected: number = 0
+    extSelected: string = ''
+    extensions: string[] = ['tv', 'biz', 'io', 'me']
     users: any[] = [
         {
           "id": 1,
