@@ -1,5 +1,2 @@
-<app-root>
-    <app-menu></app-menu>
-    <app-navbar></app-navbar>
-    <app-content></app-content>
-</app-root>
+/login --> serveur --> router --> controller
+/login -> component 
