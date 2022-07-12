@@ -1,1 +1,9 @@
-<p>login works!</p>
+<form (submit)="login(myform)" #myform="ngForm">
+    <label>Email</label>
+    <input type="text" name="email" ngModel>
+
+    <label>Mot de passe</label>
+    <input type="password" name="password" ngModel>
+
+    <button>Se connecter</button>
+</form>
