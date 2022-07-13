@@ -8,6 +8,7 @@ import { UserService } from "src/app/core/services/user.service";
         <h3>{{ user.name }}</h3>
         <p>{{ user.email }}</p>
         <button (click)="removeUser()">{{ 'REMOVE' | lang:'en' }}</button>
+        <button [routerLink]="['user', user.id]">Modifier</button>
     `
 })
 export class UserCardComponent {
