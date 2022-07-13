@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { domainValidator } from '../shared/validators/domain.validator';
 
 @Component({
   selector: 'app-login',
@@ -17,16 +18,28 @@ import { NgForm } from '@angular/forms';
   // styleUrls: ['login.component.css']
 })
 export class LoginComponent implements OnInit {
-  propEmail: string = ''
-  css: string = 'red'
-
-  constructor() { }
+  propEmail: FormControl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    domainValidator('hotmail.com')
+  ])
+  propPass: FormControl = new FormControl()
+  myform: FormGroup = this.builder.group({
+    name: this.propEmail,
+    password: this.propPass
+  })
+  submitted: boolean = false
+  
+  constructor(private builder: FormBuilder) { }
 
   ngOnInit(): void {
+    /*setTimeout(() => {
+      this.propEmail.setValue('test')
+    }, 2000)*/
   }
 
-  login(myform: NgForm) {
-    console.log(myform.value)
+  login() {
+    this.submitted = true
+    console.log(this.myform.value)
   }
-
 }
