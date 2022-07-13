@@ -11,7 +11,21 @@
     <option *ngFor="let ext of extensions">{{ ext }}</option>
 </select>
 
-<button (click)="createUser()">Créer Utilisateur</button>
+<form (submit)="createUser(myform)" #myform="ngForm">
+    <div *ngIf="myform.invalid && myform.submitted">
+        <div *ngIf="myform.controls['name'].hasError('required')">
+            Nom obligatoire
+        </div>
+    </div>
+
+    <label>Nom</label>
+    <input type="text" name="name" ngModel required>
+
+    <label>Email</label>
+    <input type="text" name="email" ngModel required>
+
+    <button>Créer Utilisateur</button>
+</form>
 
 <app-user-card 
     *ngFor="let u of users | extFilter:extSelected" 

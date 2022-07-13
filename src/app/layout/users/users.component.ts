@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
 import { User } from "src/app/core/interfaces/user";
 import { UserService } from "src/app/core/services/user.service";
 
@@ -21,11 +22,11 @@ export class UsersComponent implements OnInit {
       this.users = await this.userService.getAll()
     }
 
-    createUser() {
-      this.userService.create({
-        name: 'ana',
-        email: 'ana@gmail.com'
-      }).subscribe((userCreated: User) => {
+    createUser(form: NgForm) {
+      if (form.invalid) {
+        return
+      }
+      this.userService.create(form.value).subscribe((userCreated: User) => {
         this.users.push(userCreated)
       })
     }
