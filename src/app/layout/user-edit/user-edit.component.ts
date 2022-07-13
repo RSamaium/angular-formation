@@ -35,7 +35,11 @@ export class UserEditComponent implements OnInit {
   }
 
   edit() {
-
+    this.userService
+      .update(this.user.id, this.form.value)
+      .subscribe((userModified: User) => {
+        this.user = userModified
+      })
   }
 
 }

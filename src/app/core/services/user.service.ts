@@ -35,6 +35,12 @@ export class UserService {
         return this.http.post<User>(this.url, payload)
     }
 
+    update(
+        id: number, 
+        payload: { name: string, username: string, email: string }): Observable<User> {
+            return this.http.put<User>(this.url + '/' + id, payload)
+    }
+
     delete(id: number): Observable<void> {
         return this.http.delete<void>(this.url + '/' + id)
     }
