@@ -4,10 +4,21 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styles: [
+    `
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+    `
+  ],
+  // styleUrls: ['login.component.css']
 })
 export class LoginComponent implements OnInit {
   propEmail: string = ''
+  css: string = 'red'
 
   constructor() { }
 
