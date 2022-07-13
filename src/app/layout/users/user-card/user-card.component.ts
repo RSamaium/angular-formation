@@ -7,7 +7,7 @@ import { UserService } from "src/app/core/services/user.service";
     template: `
         <h3>{{ user.name }}</h3>
         <p>{{ user.email }}</p>
-        <button (click)="removeUser()" 
+        <button (onConfirm)="removeUser()" 
             confirm="Etes vous..." 
             [confirmUsername]="user.name">{{ 'REMOVE' | lang:'en' }}</button>
         <button [routerLink]="['user', user.id]">Modifier</button>
